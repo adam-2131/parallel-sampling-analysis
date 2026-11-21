@@ -1,0 +1,5 @@
+k,problems,gpt4o_mini_accuracy_pct,gpt41_mini_accuracy_pct,both_correct,only_gpt41_mini_correct,only_gpt4o_mini_correct,both_wrong,difference_pp,p_raw,p_holm,significant_at_0.05
+1,300,20.00,64.67,56,138,4,102,+44.67,5.99508e-36,5.99508e-36,yes
+10,300,25.00,76.33,73,156,2,69,+51.33,6.87622e-44,1.37524e-43,yes
+100,300,27.67,78.00,82,152,1,65,+50.33,2.6975e-44,1.079e-43,yes
+1000,300,27.67,78.00,82,152,1,65,+50.33,2.6975e-44,1.079e-43,yes

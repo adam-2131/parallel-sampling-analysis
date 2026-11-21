@@ -1,0 +1,13 @@
+run,comparison,problems,accuracy_a_pct,accuracy_b_pct,wrong_to_right,right_to_wrong,discordant,p_raw,family,p_holm,significant_at_0.05
+aime_41mini,k=1 vs k=10,300,64.67,76.33,43,8,51,6.86712e-07,"adjacent (Holm, m=3)",2.06014e-06,yes
+aime_41mini,k=10 vs k=100,300,76.33,78.00,11,6,17,0.332306,"adjacent (Holm, m=3)",0.664612,no
+aime_41mini,k=100 vs k=1000,300,78.00,78.00,1,1,2,1,"adjacent (Holm, m=3)",1,no
+aime_41mini,k=1 vs k=1000,300,64.67,78.00,50,10,60,1.61638e-07,"supplementary, not corrected",,yes (uncorrected)
+aime_4o,k=1 vs k=10,300,20.00,25.00,24,9,33,0.013531,"adjacent (Holm, m=3)",0.040593,yes
+aime_4o,k=10 vs k=100,300,25.00,27.67,10,2,12,0.0385742,"adjacent (Holm, m=3)",0.0771484,no
+aime_4o,k=100 vs k=1000,300,27.67,27.67,0,0,0,1,"adjacent (Holm, m=3)",1,no
+aime_4o,k=1 vs k=1000,300,20.00,27.67,31,8,39,0.000294077,"supplementary, not corrected",,yes (uncorrected)
+gsm8k_4o,k=1 vs k=10,300,94.00,97.00,9,0,9,0.00390625,"adjacent (Holm, m=3)",0.0117188,yes
+gsm8k_4o,k=10 vs k=100,300,97.00,97.00,0,0,0,1,"adjacent (Holm, m=3)",1,no
+gsm8k_4o,k=100 vs k=1000,300,97.00,97.00,0,0,0,1,"adjacent (Holm, m=3)",1,no
+gsm8k_4o,k=1 vs k=1000,300,94.00,97.00,9,0,9,0.00390625,"supplementary, not corrected",,yes (uncorrected)

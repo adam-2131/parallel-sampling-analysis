@@ -1,0 +1,13 @@
+run,from_k,to_k,accuracy_from_pct,accuracy_to_pct,gain_pp,type
+aime_41mini,1,10,64.67,76.33,+11.67,adjacent (10x)
+aime_41mini,10,100,76.33,78.00,+1.67,adjacent (10x)
+aime_41mini,100,1000,78.00,78.00,+0.00,adjacent (10x)
+aime_41mini,1,1000,64.67,78.00,+13.33,overall
+aime_4o,1,10,20.00,25.00,+5.00,adjacent (10x)
+aime_4o,10,100,25.00,27.67,+2.67,adjacent (10x)
+aime_4o,100,1000,27.67,27.67,+0.00,adjacent (10x)
+aime_4o,1,1000,20.00,27.67,+7.67,overall
+gsm8k_4o,1,10,94.00,97.00,+3.00,adjacent (10x)
+gsm8k_4o,10,100,97.00,97.00,+0.00,adjacent (10x)
+gsm8k_4o,100,1000,97.00,97.00,+0.00,adjacent (10x)
+gsm8k_4o,1,1000,94.00,97.00,+3.00,overall

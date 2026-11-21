@@ -1,0 +1,114 @@
+{
+  "description": "Actual configuration of the three final runs. Settings come from the command lines and the configuration printed at the start of each run; they are confirmed by replaying every CSV row from the cache with exactly these settings.",
+  "common_settings": {
+    "temperature": 0.7,
+    "max_tokens": 16384,
+    "seed": 0,
+    "seed_tag": "fixed_k",
+    "subset_size": 300,
+    "subset_seed": 123,
+    "k_values": [
+      1,
+      10,
+      100,
+      1000
+    ],
+    "early_stop_confidence": 0.95,
+    "early_stop_stability": 50,
+    "early_stop_min_samples": 10,
+    "early_stop_min_valid": 10
+  },
+  "runs": {
+    "aime_41mini": {
+      "model_id_requested": "gpt-4.1-mini",
+      "model_snapshot": "unavailable (not recorded)",
+      "dataset": "data/aime.jsonl",
+      "dataset_sha256": "da1b0815b9bb2faaed7aac3d39caa4b51891ad49b119311e34f31356e833bb39",
+      "dataset_size": 933,
+      "problems": 300,
+      "first_problem": "1983-4",
+      "last_problem": "2024-II-11",
+      "results_dir": "experiments_aime_41mini_16k",
+      "max_workers": 64,
+      "wall_clock_sessions": [
+        {
+          "session": 1,
+          "started_utc": "2026-11-17T20:05:25Z",
+          "ended_utc": "2026-11-17T23:16:38Z",
+          "elapsed": "03:11:10",
+          "note": "stopped manually during k=100 (6 problems left)"
+        },
+        {
+          "session": 2,
+          "started_utc": "2026-11-18T05:30:10Z",
+          "ended_utc": "2026-11-18T09:55:22Z",
+          "elapsed": "04:25:10",
+          "note": "resumed; finished responses were read from the cache"
+        }
+      ]
+    },
+    "aime_4o": {
+      "model_id_requested": "gpt-4o-mini",
+      "model_snapshot": "unavailable (not recorded)",
+      "dataset": "data/aime.jsonl",
+      "dataset_sha256": "da1b0815b9bb2faaed7aac3d39caa4b51891ad49b119311e34f31356e833bb39",
+      "dataset_size": 933,
+      "problems": 300,
+      "first_problem": "1983-4",
+      "last_problem": "2024-II-11",
+      "results_dir": "experiments_aime_4o_16k",
+      "max_workers": 48,
+      "wall_clock_sessions": [
+        {
+          "session": 1,
+          "started_utc": "2026-11-17T20:05:28Z",
+          "ended_utc": "2026-11-17T23:10:34Z",
+          "elapsed": "03:05:03",
+          "note": "ran concurrently with the other two runs"
+        }
+      ]
+    },
+    "gsm8k_4o": {
+      "model_id_requested": "gpt-4o-mini",
+      "model_snapshot": "unavailable (not recorded)",
+      "dataset": "data/gsm8k.jsonl",
+      "dataset_sha256": "c0e37efb05a7d0479074f2f3f7321dd4b2cd5b524c18b2a0f87271722107b8ff",
+      "dataset_size": 1319,
+      "problems": 300,
+      "first_problem": "gsm8k-test-1",
+      "last_problem": "gsm8k-test-1309",
+      "results_dir": "experiments_gsm8k_16k",
+      "max_workers": 32,
+      "wall_clock_sessions": [
+        {
+          "session": 1,
+          "started_utc": "2026-11-17T20:05:30Z",
+          "ended_utc": "2026-11-17T20:39:38Z",
+          "elapsed": "00:34:06",
+          "note": "ran concurrently with the other two runs"
+        }
+      ]
+    }
+  },
+  "differences_between_runs": [
+    "model: gpt-4.1-mini (aime_41mini) vs. gpt-4o-mini (aime_4o, gsm8k_4o)",
+    "dataset: AIME (aime_41mini, aime_4o) vs. GSM8K (gsm8k_4o)",
+    "max_workers: 64 / 48 / 32 (affects speed only; results do not depend on it, as the replay with max_workers=1 reproduces every row)",
+    "aime_41mini was interrupted during k=100 and resumed; the replay shows the results are identical to an uninterrupted run because every response has a fixed seed and is cached",
+    "aime_41mini reused 327 responses that had been drawn with identical requests before the full run started (30-problem pilot and a 30-response spread sample; same code and settings), counted from cache-file timestamps"
+  ],
+  "request_timeout_s": 600,
+  "code_sha256": {
+    "main.py": "63133666a7221276bccab01883f1009c6d545a929c9d2696235f753a8bbda844",
+    "eval.py": "f0d18c4ca547b0e8332be377fafdb625bd2b53eed817fbe6fb52cd40f59a6760",
+    "parse.py": "ecd7f91e370946bf089190110053c6279d2b32be166d52bac1b9cc4c9fb5767f",
+    "utils.py": "01418ffbd49a022be1bb48e43802cd7edd58946103bb68d25211d94133dfe295",
+    "prompting.py": "e9e3ed084edcba74e7ac98f9231361cf3134654f591b9090e3b2b1a32f0eb9f5",
+    "data.py": "7b74bb42429a0b465d438115cdb68ff7b691d5fa8d4fedbe775f30d22da1b2f7",
+    "scripts/replay_corrected.py": "374e24c29bd32b741faa7409d444d12d8ca78acedf655616ad785b15072c2cbf",
+    "submission_analysis/analyze.py": "252d9a52a0f0ea58cd0432042e4edf92821b29e490d6466670bf3254caa370d5"
+  },
+  "parser_sha256": "ecd7f91e370946bf089190110053c6279d2b32be166d52bac1b9cc4c9fb5767f",
+  "git_head": "52a9171e5be48a38890aeb2dd715a8f25a4edb77",
+  "git_working_tree_note": "The experiment code was not committed when the runs were made; the SHA-256 fingerprints above identify the exact files. The replay verifies that these files reproduce every CSV row."
+}
