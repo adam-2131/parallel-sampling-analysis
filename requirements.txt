@@ -1,0 +1,11 @@
+openai>=1.0.0
+
+# Plotting and analysis scripts
+pandas>=2.0.0
+matplotlib>=3.7.0
+
+# Rebuilding data/*.jsonl from Hugging Face (scripts/build_*_jsonl.py)
+datasets>=2.14.0
+
+# Tests
+pytest>=7.4.0

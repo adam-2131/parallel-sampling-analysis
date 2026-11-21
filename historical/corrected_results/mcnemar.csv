@@ -1,0 +1,19 @@
+run,comparison,scoring,problems,wrong_to_right,right_to_wrong,p_value
+aime_4o,k=1 vs k=10,original,300,22,7,0.008130
+aime_4o,k=1 vs k=10,corrected,300,22,8,0.016125
+aime_4o,k=10 vs k=100,original,300,6,4,0.753906
+aime_4o,k=10 vs k=100,corrected,300,6,3,0.507812
+aime_4o,k=100 vs k=1000,original,300,1,2,1.000000
+aime_4o,k=100 vs k=1000,corrected,300,1,2,1.000000
+gsm8k_4o,k=1 vs k=10,original,300,7,1,0.070312
+gsm8k_4o,k=1 vs k=10,corrected,300,4,1,0.375000
+gsm8k_4o,k=10 vs k=100,original,300,2,1,1.000000
+gsm8k_4o,k=10 vs k=100,corrected,300,1,0,1.000000
+gsm8k_4o,k=100 vs k=1000,original,300,0,0,1.000000
+gsm8k_4o,k=100 vs k=1000,corrected,300,0,0,1.000000
+aime_41,k=1 vs k=10,original,300,31,12,0.005402
+aime_41,k=1 vs k=10,corrected,300,35,1,0.000000
+aime_41,k=10 vs k=100,original,300,20,6,0.009355
+aime_41,k=10 vs k=100,corrected,300,23,0,0.000000
+aime_41,k=100 vs k=1000,original,300,1,0,1.000000
+aime_41,k=100 vs k=1000,corrected,300,2,0,0.500000
